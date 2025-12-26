@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   List,
   ActionPanel,
@@ -36,7 +36,8 @@ export default function Command() {
       setUfValue(value);
       setUfDate(getCachedUFDate());
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Failed to load UF value";
+      const errorMessage =
+        err instanceof Error ? err.message : "Failed to load UF value";
       setError(errorMessage);
       showToast({
         style: Toast.Style.Failure,
@@ -70,7 +71,10 @@ export default function Command() {
 
   const amount = parseAmount(searchText);
   const direction = detectDirection(searchText);
-  const showBoth = direction === "both" || (!searchText.toLowerCase().includes("uf") && !searchText.toLowerCase().includes("clp"));
+  const showBoth =
+    direction === "both" ||
+    (!searchText.toLowerCase().includes("uf") &&
+      !searchText.toLowerCase().includes("clp"));
 
   let ufToClpResult: number | null = null;
   let clpToUfResult: number | null = null;
@@ -135,7 +139,7 @@ export default function Command() {
                         icon={Icon.Clipboard}
                         onAction={handleCopy(
                           formatCLPForClipboard(ufToClpResult),
-                          `${formatCLP(ufToClpResult)} CLP`
+                          `${formatCLP(ufToClpResult)} CLP`,
                         )}
                       />
                     </ActionPanel>
@@ -154,7 +158,7 @@ export default function Command() {
                         icon={Icon.Clipboard}
                         onAction={handleCopy(
                           formatUFForClipboard(clpToUfResult),
-                          `${formatUF(clpToUfResult)} UF`
+                          `${formatUF(clpToUfResult)} UF`,
                         )}
                       />
                     </ActionPanel>
@@ -199,4 +203,3 @@ export default function Command() {
     </List>
   );
 }
-

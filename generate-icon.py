@@ -29,9 +29,11 @@ try:
     # Draw CLP text
     draw.text((256, 320), 'CLP', fill='#007AFF', anchor='mm', font=font_small)
     
-    # Save the image
-    img.save('icon.png')
-    print("✓ icon.png created successfully!")
+    # Save the image to assets folder
+    import os
+    os.makedirs('assets', exist_ok=True)
+    img.save('assets/icon.png')
+    print("✓ assets/icon.png created successfully!")
     
 except ImportError:
     print("Error: Pillow is not installed.")

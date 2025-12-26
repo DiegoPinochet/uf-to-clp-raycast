@@ -43,4 +43,3 @@ export function formatUFForClipboard(uf: number): string {
 export function formatCLPForClipboard(clp: number): string {
   return Math.round(clp).toString();
 }
-

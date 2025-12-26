@@ -1,13 +1,5 @@
 import { Cache } from "@raycast/api";
 
-interface UFResponse {
-  codigo: string;
-  nombre: string;
-  unidad_medida: string;
-  fecha: string;
-  valor: number;
-}
-
 interface MindicadorResponse {
   version: string;
   autor: string;
@@ -52,7 +44,7 @@ export async function getUFValue(): Promise<number> {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data: MindicadorResponse = await response.json();
+    const data = (await response.json()) as MindicadorResponse;
 
     // Get the most recent UF value (first item in serie array)
     if (!data.serie || data.serie.length === 0) {
@@ -68,7 +60,7 @@ export async function getUFValue(): Promise<number> {
         value: ufValue,
         timestamp: new Date().toISOString(),
         date: today,
-      })
+      }),
     );
 
     return ufValue;
@@ -81,7 +73,7 @@ export async function getUFValue(): Promise<number> {
     }
 
     throw new Error(
-      `Failed to fetch UF value: ${error instanceof Error ? error.message : "Unknown error"}`
+      `Failed to fetch UF value: ${error instanceof Error ? error.message : "Unknown error"}`,
     );
   }
 }
@@ -101,4 +93,3 @@ export function getCachedUFDate(): string | null {
 
   return null;
 }
-
