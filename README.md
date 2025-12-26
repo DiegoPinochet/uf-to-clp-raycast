@@ -33,19 +33,19 @@ UF values are fetched from [mindicador.cl](https://mindicador.cl/api/uf), a free
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Generate icon (requires Pillow: pip3 install Pillow)
 python3 generate-icon.py
 
 # Run in development mode
-npm run dev
+pnpm dev
 
 # Build for production
-npm run build
+pnpm build
 
 # Lint code
-npm run lint
+pnpm lint
 ```
 
 ## License
