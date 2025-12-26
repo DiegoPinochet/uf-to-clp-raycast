@@ -3,7 +3,7 @@
   "name": "uf-clp-converter",
   "title": "UF to CLP Converter",
   "description": "Convert between UF (Unidad de Fomento) and CLP (Chilean Peso) using real-time UF values from mindicador.cl",
-  "icon": "assets/icon.png",
+  "icon": "icon.png",
   "author": "diegopinochet",
   "categories": [
     "Finance",
@@ -45,6 +45,6 @@
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
-    "publish": "ray publish"
+    "publish": "npx @raycast/api@latest publish"
   }
 }
