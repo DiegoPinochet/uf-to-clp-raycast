@@ -35,9 +35,6 @@ UF values are fetched from [mindicador.cl](https://mindicador.cl/api/uf), a free
 # Install dependencies
 pnpm install
 
-# Generate icon (requires Pillow: pip3 install Pillow)
-python3 generate-icon.py
-
 # Run in development mode
 pnpm dev
 
