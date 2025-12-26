@@ -45,6 +45,35 @@ pnpm build
 pnpm lint
 ```
 
+## Publishing to Raycast Store
+
+Before publishing, make sure:
+
+1. **You have a Raycast account** - Sign up at [raycast.com](https://raycast.com) if you haven't already
+2. **You're logged in** - Run `ray login` in your terminal to authenticate
+3. **Extension is ready**:
+   - ✅ All code is tested and working
+   - ✅ Icon is properly set (`assets/icon.png`)
+   - ✅ `package.json` has correct metadata
+   - ✅ Build passes (`pnpm build`)
+   - ✅ Lint passes (`pnpm lint`)
+
+Then publish with:
+
+```bash
+pnpm publish
+```
+
+This will:
+- Validate your extension
+- Build the production version
+- Submit to Raycast Store for review
+
+**Review Process:**
+- Raycast team typically reviews within 1-2 business days
+- Once approved, your extension will be available in the Raycast Store
+- Users can install it directly from Raycast
+
 ## License
 
 MIT
